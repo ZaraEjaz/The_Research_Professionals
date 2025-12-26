@@ -11,6 +11,7 @@ import PublicationsPreview from '../components/Publications/PublicationsPreview'
 import ServicesSection from '../components/ServicesSection/ServicesSection';
 import Footer from '../components/Footer/Footer';
 import SEO from '../components/SEO';
+import ProductResearch from '../components/ProductResearch/ProductResearch';
 
 const Home = () => {
   const location = useLocation();
@@ -40,6 +41,7 @@ const Home = () => {
       <CourseSection />
       <PublicationsPreview />
       <ServicesSection/>
+      <ProductResearch />
       <Footer />
     </div>
   );

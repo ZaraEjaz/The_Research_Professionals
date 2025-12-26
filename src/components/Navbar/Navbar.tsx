@@ -71,6 +71,10 @@ const Navbar = () => {
               <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-white font-medium transition-colors">
                 Services
               </button>
+
+              <button onClick={() => scrollToSection('product-research')} className="text-gray-300 hover:text-white font-medium transition-colors">
+                Product Research
+              </button>
               
               <button 
                 onClick={() => setIsModalOpen(true)}
