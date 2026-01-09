@@ -9,7 +9,7 @@ const ClientsTicker = () => {
   const clients = Array.from({ length: 10 }, (_, i) => ({
     id: i + 1,
     name: `Partner Organization ${i + 1}`,
-    src: `/clients/client_${i + 1}.webp`, 
+    src: `/cl/client_${i + 1}.webp`, 
   }));
 
   // Duplicate the list to create a seamless infinite loop without gaps
@@ -17,7 +17,6 @@ const ClientsTicker = () => {
 
   return (
     <motion.section
-      // OPTIMIZATION: Only animate opacity when scrolled into view
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-50px" }} 
@@ -54,20 +53,19 @@ const ClientsTicker = () => {
           {/* Sliding Track */}
           <motion.div
             className="flex w-max"
-            // The animation moves the track to the left indefinitely
             animate={{ x: isHovered ? undefined : ["0%", "-33.33%"] }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 30, // Adjust speed (higher number = slower)
+                duration: 30, 
                 ease: "linear",
               },
             }}
           >
             {duplicatedClients.map((client, index) => (
               <ClientLogo
-                key={`${client.id}-${index}`} // Unique key for duplicates
+                key={`${client.id}-${index}`}
                 src={client.src}
                 alt={client.name}
               />

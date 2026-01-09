@@ -5,10 +5,12 @@ interface GallerySectionProps {
 }
 
 const GallerySection = ({ title = "Medical Research & Training Gallery" }: GallerySectionProps) => {
-  // 1. Automatically generate the list of your 18 local images
-  const localImages = Array.from({ length: 18 }, (_, i) => `/images/g_image_${i + 1}.webp`);
+  // 1. Automatically generate the list of your 23 local images
+  const localImages = Array.from({ length: 23 }, (_, i) => `/images/g_image_${i + 1}.webp`);
 
   // 2. Duplicate array for infinite scroll effect
+  // Note: Since we have 23 images, duplicating 4 times creates a very long strip. 
+  // We need a long duration time to make this move slowly.
   const galleryStrip = [...localImages, ...localImages, ...localImages, ...localImages];
 
   return (
@@ -42,7 +44,11 @@ const GallerySection = ({ title = "Medical Research & Training Gallery" }: Galle
             </div>
 
             <div className="flex overflow-hidden">
-              <div className="animate-scroll-left flex gap-4 md:gap-6 whitespace-nowrap hover:[animation-play-state:paused]">
+              <div 
+                className="animate-scroll-left flex gap-4 md:gap-6 whitespace-nowrap hover:[animation-play-state:paused]"
+                // UPDATE: Controls speed. Higher number = Slower.
+                style={{ animationDuration: '120s' }}
+              >
                 {galleryStrip.map((imagePath, index) => (
                   <GalleryItem key={`row1-${index}`} src={imagePath} />
                 ))}
@@ -58,7 +64,11 @@ const GallerySection = ({ title = "Medical Research & Training Gallery" }: Galle
             </div>
 
             <div className="flex overflow-hidden">
-              <div className="animate-scroll-right flex gap-4 md:gap-6 whitespace-nowrap hover:[animation-play-state:paused]">
+              <div 
+                className="animate-scroll-right flex gap-4 md:gap-6 whitespace-nowrap hover:[animation-play-state:paused]"
+                // UPDATE: Controls speed. Higher number = Slower.
+                style={{ animationDuration: '120s' }}
+              >
                 {galleryStrip.map((imagePath, index) => (
                   <GalleryItem key={`row2-${index}`} src={imagePath} />
                 ))}
