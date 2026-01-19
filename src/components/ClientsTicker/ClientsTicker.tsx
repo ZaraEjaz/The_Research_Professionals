@@ -6,7 +6,7 @@ const ClientsTicker = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   // Ensure these file names match exactly what is in public/clients/
-  const clients = Array.from({ length: 10 }, (_, i) => ({
+  const clients = Array.from({ length: 14 }, (_, i) => ({
     id: i + 1,
     name: `Partner Organization ${i + 1}`,
     src: `/cl/client_${i + 1}.webp`, 
