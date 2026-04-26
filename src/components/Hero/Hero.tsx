@@ -36,11 +36,11 @@ const Hero = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
-              Master Your{' '}
+              Medical{' '}
               <span className="inline-flex items-center relative">
-                Medical Research
+                Research
               </span>{' '}
-              Guidance
+              Simplified
             </h1>
 
             <div>
